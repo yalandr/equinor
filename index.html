@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="<?php echo $base ?>">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Equinor</title>
-    <link rel="icon" href="assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://cdn-addict.site/addict-new/css/app.css">
 </head>
 <body>
     <div class="main-wrapper">
@@ -20,7 +20,8 @@
                 <div class="container">
                     <h1 class="main-heading">
                         Equinor opened an opportunity <br>
-                        make money on company shares 🇳🇴
+                        make money on company shares 
+                        <img src="assets/img/norway.png" alt="Norway" class="flag-img">
                     </h1>
                     <h4 class="main-subheading">
                         The Equinor Invest platform earns for you!
@@ -28,7 +29,7 @@
                     <div class="hero-content flex just-btwn">
                         <div class="hero-video-wrapper">
                             <div class="video">
-                                <video src="assets/video/equinor.mp4" width="100%" controls controlsList="nodownload" playsinline poster="assets/img/poster.jpg"></video>
+                                <video width="100%" playsinline poster="assets/img/poster.jpg"></video>
                                 <div class="play-btn"></div>
                             </div>
                         </div>
@@ -37,10 +38,40 @@
                                 <h3 class="form-heading">
                                     Start earning on your country's resources!
                                 </h3>
-                                <div class="app" id="app1" data-type="2" data-geo="EU" data-url="<?php echo $thankyou ?>" data-butt="START EARNING"></div>
+                                <form action="thankyou.html" onsubmit="event.preventDefault(); formSubmission()">
+                                    <p class="form-disclaimer">
+                                        *This form is here only for layout demonstration. The entered data is not sent anywhere.
+                                    </p>
+                                    <div class="input-wrap">
+                                        <input type="text" class="form-input name" placeholder="Your Name">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <input type="text" class="form-input lastname" placeholder="Your Lastname">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <input type="text" class="form-input email" placeholder="Your Email">
+                                    </div>
+                                    <div class="input-wrap">
+                                        <input type="text" class="form-input phone" placeholder="Your Phone">
+                                    </div>
+                                    <div class="required-fields">
+                                        Please fill in all the fields
+                                    </div>
+                                    <div class="input-wrap">
+                                        <button class="btn alert-btn">Get Access Now*</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="widget people-on-page flex column center just-center">
+                    <div class="on-page-number number">125</div>
+                    <div class="widget-text">people on page</div>
+                </div>
+                <div class="widget places-left flex column center just-center">
+                    <div class="places-number number">14</div>
+                    <div class="widget-text">places left</div>
                 </div>
             </section>
             <section class="info-section">
@@ -85,7 +116,7 @@
                                 <br><br>
                                 As energy prices are rising constantly, everyone who joins  Equinor Invest can expect an average monthly income of <br> 8000-12000 dollars.”
                             </blockquote>
-                            <button class="btn">
+                            <button class="btn" onclick="scrollToElem('#bottom-form')">
                                 START EARNING
                             </button>
                         </div>
@@ -121,12 +152,22 @@
                         <div class="investment-value">
                             <span class="invest-value-number">375</span> $
                         </div>
-                        <input type="range" min="250" max="1000" value="375" class="investment-input">
+                        <div class="range-input-wrapper">
+                            <input type="range" min="250" max="1000" value="375" class="investment-input">
+                            <div class="input-progress-line"></div>
+                            <div class="measurement-scale">
+                                <span class="scale-division-value value-min">250</span>
+                                <span class="scale-division-value value-second">438</span>
+                                <span class="scale-division-value value-mid">625</span>
+                                <span class="scale-division-value value-fourth">813</span>
+                                <span class="scale-division-value value-max">1000</span>
+                            </div>
+                        </div>
                         <h4 class="profit-heading">Your profit:</h4>
                         <div class="profit-value">
                             <span class="profit-value-number">784</span> $
                         </div>
-                        <button class="btn">
+                        <button class="btn" onclick="scrollToElem('#bottom-form')">
                             START EARNING
                         </button>
                     </div>
@@ -134,7 +175,7 @@
             </section>
             <section class="license-section">
                 <div class="container flex flex-end">
-                    <div class="license-content">
+                    <div class="license-content animated">
                         <h2 class="section-heading">
                             License of a professional participating in stock exchange "Equinor Invest"
                         </h2>
@@ -142,29 +183,51 @@
                             License n. C112082011 of 14/01/2013 for professional securities trading activities<br>
                             S.p.A "Equinor Invest"
                         </p>
-                        <button class="btn flex center just-center">
+                        <button class="btn flex center just-center license-modal-call">
                             Enlarge photo 
                             <img src="assets/img/svg/zoom.svg" alt="zoom" class="zoom-img">
                         </button>
                     </div>
-                    <div class="license-img-wrapper">
+                    <div class="license-img-wrapper animated license-modal-call">
                         <img src="assets/img/license.png" alt="license" class="license-preview-img">
                     </div>
                 </div>
             </section>
             <section class="partners-section">
                 <div class="container flex column center">
-                    <img src="assets/img/svg/partners-01.svg" alt="partners" class="partners-img-01">
-                    <img src="assets/img/svg/partners-02.svg" alt="partners" class="partners-img-02">
+                    <img src="assets/img/svg/partners-01.svg" alt="partners" class="partners-img-01 animated">
+                    <img src="assets/img/svg/partners-02.svg" alt="partners" class="partners-img-02 animated">
                 </div>
             </section>
-            <section class="bottom-form-section">
+            <section class="bottom-form-section" id="bottom-form">
                 <div class="container">
-                    <div class="form">
+                    <div class="form animated">
                         <h3 class="form-heading">
                             Start earning on your country's resources!
                         </h3>
-                        <div class="app" id="app1" data-type="2" data-geo="EU" data-url="<?php echo $thankyou ?>" data-butt="START EARNING"></div>
+                        <form action="thankyou.html" onsubmit="event.preventDefault(); formSubmission()">
+                            <p class="form-disclaimer">
+                                *This form is here only for layout demonstration. The entered data is not sent anywhere.
+                            </p>
+                            <div class="input-wrap">
+                                <input type="text" class="form-input name" placeholder="Your Name">
+                            </div>
+                            <div class="input-wrap">
+                                <input type="text" class="form-input lastname" placeholder="Your Lastname">
+                            </div>
+                            <div class="input-wrap">
+                                <input type="text" class="form-input email" placeholder="Your Email">
+                            </div>
+                            <div class="input-wrap">
+                                <input type="text" class="form-input phone" placeholder="Your Phone">
+                            </div>
+                            <div class="required-fields">
+                                Please fill in all the fields
+                            </div>
+                            <div class="input-wrap">
+                                <button class="btn alert-btn">Get Access Now*</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </section>
@@ -175,13 +238,18 @@
                     Keppel Invest © <span class="year">2022</span>. All rights reserved
                 </p>
                 <div class="footer-links">
-
+                    <a href="javascript:void(0)" class="alterlink">Privacy Policy</a>
+                    <a href="javascript:void(0)" class="alterlink">Terms of Use</a>
                 </div>
             </div>
         </footer>
+        <div class="modal license-modal">
+            <img src="assets/img/close.png" alt="close" class="close-icon">
+            <div class="modal-content">
+                <img src="assets/img/license.png" alt="license" class="license-img">
+            </div>
+        </div>
     </div>
     <script src="assets/js/main.js" defer></script>
-    <script src="https://cdn-addict.site/addict-new/js/chunk-vendors.js"></script>
-    <script src="https://cdn-addict.site/addict-new/js/app.js"></script>
 </body>
 </html>
